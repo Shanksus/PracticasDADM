@@ -1,8 +1,7 @@
-package UI
+package upv.dadm.devalent.practicainterfaz.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import upv.dadm.devalent.practicainterfaz.R
 import upv.dadm.devalent.practicainterfaz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
