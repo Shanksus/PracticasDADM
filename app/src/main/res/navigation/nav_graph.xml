@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newQuotationFragment">
+
+    <fragment
+        android:id="@+id/newQuotationFragment"
+        android:name="upv.dadm.devalent.practicainterfaz.ui.newquotation.NewQuotationFragment"
+        android:label="@string/newQuotation" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="upv.dadm.devalent.practicainterfaz.ui.settings.SettingsFragment"
+        android:label="@string/Settings" />
+    <dialog
+        android:id="@+id/aboutDialogFragment"
+        android:name="upv.dadm.devalent.practicainterfaz.ui.about.AboutDialogFragment"
+        android:label="@string/About" />
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="upv.dadm.devalent.practicainterfaz.ui.favourites.FavouritesFragment"
+        android:label="@string/Favourite" />
+</navigation>
