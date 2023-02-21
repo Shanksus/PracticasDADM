@@ -8,7 +8,7 @@ import upv.dadm.devalent.practicainterfaz.databinding.FragmentFavouritesBinding
 import upv.dadm.devalent.practicainterfaz.databinding.FragmentNewQuotationBinding
 import upv.dadm.devalent.practicainterfaz.databinding.FragmentSettingsBinding
 
-class SettingsFragment: Fragment(R.layout.fragment_new_quotation) {
+class SettingsFragment: Fragment(R.layout.fragment_settings) {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
