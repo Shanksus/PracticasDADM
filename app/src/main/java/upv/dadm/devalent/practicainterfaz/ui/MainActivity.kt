@@ -7,6 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationBarView
 import upv.dadm.devalent.practicainterfaz.R
 import upv.dadm.devalent.practicainterfaz.databinding.ActivityMainBinding
 
@@ -18,11 +19,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navController = binding.fragmentContainer.getFragment<NavHostFragment>().navController
+        binding.bnNavigation as NavigationBarView
         binding.bnNavigation.setupWithNavController(navController)
 
         setSupportActionBar(binding.idMaterialToolBar)
         var appBarConfig = AppBarConfiguration(setOf(R.id.newQuotationFragment, R.id.favouritesFragment, R.id.settingsFragment))
         setupActionBarWithNavController(navController, appBarConfig)
+
+
     }
 
 
