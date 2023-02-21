@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import upv.dadm.devalent.practicainterfaz.R
 import upv.dadm.devalent.practicainterfaz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         val navController = binding.fragmentContainer.getFragment<NavHostFragment>().navController
         binding.bnNavigation.setupWithNavController(navController)
+
+        setSupportActionBar(binding.idMaterialToolBar)
+        var appBarConfig = AppBarConfiguration(setOf(R.id.newQuotationFragment, R.id.favouritesFragment, R.id.settingsFragment))
+        setupActionBarWithNavController(navController, appBarConfig)
     }
 
 
