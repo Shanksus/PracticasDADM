@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">PracticaInterfaz</string>
     <string name="newQuotation">Get a new quotation</string>
-    <string name="About">About</string>
+    <string name="About">Practica interfaz by \n\nDamian \n\ndevalent@inf.upv.es \n\nDeveloped for DADM 2023</string>
     <string name="Favourite">Favourite quotations</string>
     <string name="Settings">Settings</string>
     <string name="FavouriteItem">Favourites</string>
     <string name="newQuotationItem">Quotations</string>
+    <string name="descripcion">Descripción de la foto</string>
 </resources>
