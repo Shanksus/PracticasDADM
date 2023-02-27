@@ -9,4 +9,5 @@
     <string name="descripcion">Descripción de la foto</string>
     <string name="descripcionfloatbutton">Botón flotante para añadir una cita nueva</string>
     <string name="tituloAbout">About</string>
+    <string name="msgBienvenida">“Hello %1s!,\n\nRefresh to get a new quotation\n\n(swipe down or options menu)</string>
 </resources>
