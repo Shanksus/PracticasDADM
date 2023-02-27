@@ -18,13 +18,13 @@
             android:layout_height="wrap_content"
             android:text="@string/About"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@id/imgDesarrollador"
+            app:layout_constraintBottom_toTopOf="@id/imgPerfil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imgDesarrollador"
+            android:id="@+id/imgPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

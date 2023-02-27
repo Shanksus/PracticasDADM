@@ -5,7 +5,7 @@
  <item
      android:id="@+id/newQuotationFragment"
      android:title="@string/newQuotationItem"
-     android:icon="@drawable/baseline_add_24"/>
+     android:icon="@drawable/baseline_chat_24"/>
  <item
      android:id="@+id/favouritesFragment"
      android:title="@string/FavouriteItem"
