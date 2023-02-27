@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/aboutDialogFragment"
-        android:title="@string/About"
+        android:title="@string/tituloAbout"
         android:icon="@drawable/baseline_question_mark_24"
         app:showAsAction="never"
         />

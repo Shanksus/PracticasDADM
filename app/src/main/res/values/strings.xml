@@ -7,4 +7,6 @@
     <string name="FavouriteItem">Favourites</string>
     <string name="newQuotationItem">Quotations</string>
     <string name="descripcion">Descripción de la foto</string>
+    <string name="descripcionfloatbutton">Botón flotante para añadir una cita nueva</string>
+    <string name="tituloAbout">About</string>
 </resources>
