@@ -19,8 +19,28 @@ class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation) {
         viewModel.userName.observe(viewLifecycleOwner) { userName ->
             binding.msgBienvenida.text = getString(R.string.msgBienvenida, userName)
         }
-    }
+        viewModel.cita.observe(viewLifecycleOwner) { cita ->
+            binding.msgCita.text = cita.cita
+            if (cita.autor == "") {
+                binding.msgAutor.text = "Anonymous"
+            } else {
+                binding.msgAutor.text = cita.autor
+            }
+        }
 
+        viewModel.isRefreshing.observe(viewLifecycleOwner) {isRefreshing ->
+            binding.swipeRefreshLayout.isRefreshing = isRefreshing
+        }
+
+        viewModel.isGreetingsVisible.observe(viewLifecycleOwner) {
+            binding.msgBienvenida.visibility = if (it) View.VISIBLE else View.INVISIBLE
+        }
+
+        binding.swipeRefreshLayout.setOnRefreshListener { getNewQuotation() }
+    }
+    private fun getNewQuotation(){
+        viewModel.getNewQuotation()
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

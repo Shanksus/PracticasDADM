@@ -2,13 +2,27 @@ package upv.dadm.devalent.practicainterfaz.ui.newquotation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import upv.dadm.devalent.practicainterfaz.domain.model.Quotation
 
 class NewQuotationViewModel : ViewModel() {
 
-    private val userNamePrivate = MutableLiveData<String>(getUserName())
-
+    private val _userName = MutableLiveData<String>(getUserName())
     private fun getUserName() = setOf("Alice", "Bob", "Charlie", "David", "Emma").random()
+    val userName : LiveData<String> = _userName
 
-    val userName : LiveData<String> = userNamePrivate
+    private val _cita = MutableLiveData<Quotation>()
+    val cita : LiveData<Quotation> = _cita
+
+    private val _isRefreshing = MutableLiveData<Boolean>()
+    val isRefreshing : LiveData<Boolean> = _isRefreshing
+    val isGreetingsVisible = Transformations.map(cita) { it == null }
+
+    fun getNewQuotation() {
+        _isRefreshing.value = true
+        val num = (0..99).random().toString()
+        _cita.value = Quotation(num, "Quotation text #$num", "Author #$num")
+        _isRefreshing.value = false
+    }
 }
