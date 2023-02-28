@@ -1,18 +1,22 @@
 package upv.dadm.devalent.practicainterfaz.ui.newquotation
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import upv.dadm.devalent.practicainterfaz.R
 import upv.dadm.devalent.practicainterfaz.databinding.FragmentNewQuotationBinding
 
-class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation) {
+class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation), MenuProvider {
     private var _binding: FragmentNewQuotationBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: NewQuotationViewModel by viewModels()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentNewQuotationBinding.bind(view)
@@ -28,7 +32,7 @@ class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation) {
             }
         }
 
-        viewModel.isRefreshing.observe(viewLifecycleOwner) {isRefreshing ->
+        viewModel.isRefreshing.observe(viewLifecycleOwner) { isRefreshing ->
             binding.swipeRefreshLayout.isRefreshing = isRefreshing
         }
 
@@ -37,10 +41,30 @@ class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation) {
         }
 
         binding.swipeRefreshLayout.setOnRefreshListener { getNewQuotation() }
+
+        requireActivity().addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
-    private fun getNewQuotation(){
+
+    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+        menuInflater.inflate(R.menu.menu_new_quotation, menu)
+    }
+
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+        return when (menuItem.itemId) {
+            R.id.refresh -> {
+                getNewQuotation()
+                true
+            }
+            else -> {
+                false
+            }
+        }
+    }
+
+    private fun getNewQuotation() {
         viewModel.getNewQuotation()
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

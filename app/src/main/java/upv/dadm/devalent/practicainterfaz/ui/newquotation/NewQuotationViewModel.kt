@@ -10,13 +10,13 @@ class NewQuotationViewModel : ViewModel() {
 
     private val _userName = MutableLiveData<String>(getUserName())
     private fun getUserName() = setOf("Alice", "Bob", "Charlie", "David", "Emma").random()
-    val userName : LiveData<String> = _userName
+    val userName: LiveData<String> = _userName
 
     private val _cita = MutableLiveData<Quotation>()
-    val cita : LiveData<Quotation> = _cita
+    val cita: LiveData<Quotation> = _cita
 
     private val _isRefreshing = MutableLiveData<Boolean>()
-    val isRefreshing : LiveData<Boolean> = _isRefreshing
+    val isRefreshing: LiveData<Boolean> = _isRefreshing
     val isGreetingsVisible = Transformations.map(cita) { it == null }
 
     fun getNewQuotation() {
