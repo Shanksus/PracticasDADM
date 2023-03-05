@@ -43,6 +43,14 @@ class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation), MenuProv
         binding.swipeRefreshLayout.setOnRefreshListener { getNewQuotation() }
 
         requireActivity().addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
+        viewModel.showingButton.observe(viewLifecycleOwner) {
+            binding.fbAnyadirFav.visibility = if (it) View.VISIBLE else View.INVISIBLE
+        }
+
+        binding.fbAnyadirFav.setOnClickListener{
+            viewModel.addToFavourites()
+        }
     }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
