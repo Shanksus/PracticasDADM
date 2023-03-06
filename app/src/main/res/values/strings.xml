@@ -11,4 +11,9 @@
     <string name="tituloAbout">About</string>
     <string name="msgBienvenida">“Hello %1s!,\n\nRefresh to get a new quotation\n\n(swipe down or options menu)</string>
     <string name="refreshTitle">Refresh</string>
+    <string name="tituloDialogo">Delete all favourite quotations</string>
+    <string name="mensajeDialogo">Do you really want to delete all quotations?</string>
+    <string name="botonDialogoPositivo">Accept</string>
+    <string name="botonDialogoNegativo">Cancel</string>
+    <string name="tituloItemMenuFavourite">Delete all quotations</string>
 </resources>
