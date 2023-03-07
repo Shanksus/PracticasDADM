@@ -18,6 +18,8 @@ class FavouritesViewModel : ViewModel() {
             val num = (0..99).random().toString()
             aux.add(Quotation(num, "Quotation text #$num", "Author #$num"))
         }
+        aux.add(Quotation(100.toString(), "Quotation text #$100", "Author Albert Einstein"))
+        aux.add(Quotation(101.toString(), "Quotation text #$101", "Author Anonymous"))
         return aux
     }
 
