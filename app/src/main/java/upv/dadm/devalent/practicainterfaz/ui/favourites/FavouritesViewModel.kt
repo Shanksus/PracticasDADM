@@ -24,4 +24,10 @@ class FavouritesViewModel : ViewModel() {
     fun deleteAllQuotations() {
         _listaFavs.value = emptyList()
     }
+
+    fun deleteQuotationAtPosition(position: Int) {
+        val listaNueva = _listaFavs.value?.toMutableList()
+        listaNueva?.removeAt(position)
+        _listaFavs.value = listaNueva!!
+    }
 }
