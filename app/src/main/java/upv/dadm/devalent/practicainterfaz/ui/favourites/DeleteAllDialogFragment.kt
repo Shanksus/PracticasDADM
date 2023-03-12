@@ -4,23 +4,21 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.activityViewModels
 import upv.dadm.devalent.practicainterfaz.R
 
-class DeleteAllDialogFragment(private val listener: DeleteAllDialogListener) : DialogFragment() {
-    interface DeleteAllDialogListener {
-        fun onDeleteAllConfirmed()
-        fun onDeleteAllCancelled()
-    }
+class DeleteAllDialogFragment : DialogFragment() {
 
+    private val viewModel: FavouritesViewModel by activityViewModels()
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val mensajeDialogo = AlertDialog.Builder(requireContext())
         mensajeDialogo.setTitle(R.string.tituloDialogo)
         mensajeDialogo.setMessage(R.string.mensajeDialogo)
         mensajeDialogo.setPositiveButton(R.string.botonDialogoPositivo) { _, _ ->
-            listener.onDeleteAllConfirmed()
+            //viewModel.
         }
         mensajeDialogo.setNegativeButton(R.string.botonDialogoNegativo) { _, _ ->
-            listener.onDeleteAllCancelled()
+            dismiss()
         }
         return mensajeDialogo.create()
     }
