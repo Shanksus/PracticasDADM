@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="descripcionfloatbutton">Botón flotante para añadir una cita nueva</string>
+    <string name="app_name">PracticaInterfaz</string>
+    <string name="newQuotation">Get a new quotation</string>
+    <string name="About">Practica interfaz by \n\nDamian \n\ndevalent@inf.upv.es \n\nDeveloped for DADM 2023</string>
+    <string name="Favourite">Favourite quotations</string>
+    <string name="Settings">Settings</string>
+    <string name="FavouriteItem">Favourites</string>
+    <string name="newQuotationItem">Quotations</string>
+    <string name="descripcion">Photo description</string>
+    <string name="descripcionfloatbutton">Floatbutton to add a new quotation</string>
+    <string name="tituloAbout">About</string>
+    <string name="msgBienvenida">“Hello %1s!,\n\nRefresh to get a new quotation\n\n(swipe down or options menu)</string>
+    <string name="refreshTitle">Refresh</string>
     <string name="tituloDialogo">Delete all favourite quotations</string>
+    <string name="mensajeDialogo">Do you really want to delete all quotations?</string>
     <string name="botonDialogoPositivo">Accept</string>
     <string name="botonDialogoNegativo">Cancel</string>
     <string name="tituloItemMenuFavourite">Delete all quotations</string>

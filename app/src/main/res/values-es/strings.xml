@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PracticaInterfaz</string>
+    <string name="newQuotation">Obtener una nueva cita</string>
+    <string name="About">Práctica interfaz por \n\nDamián Valente \n\ndevalent@inf.upv.es \n\nDesarrollado en DADM 2023</string>
+    <string name="Favourite">Citas favoritas</string>
+    <string name="Settings">Configuración</string>
+    <string name="FavouriteItem">Favoritos</string>
+    <string name="newQuotationItem">Citas</string>
+    <string name="descripcion">Descripción de la foto</string>
+    <string name="descripcionfloatbutton">Botón flotante para añadir una nueva cita</string>
+    <string name="tituloAbout">Acerca de</string>
+    <string name="msgBienvenida">Hola %1s!,\\n\\nActualiza para recibir una nueva cita\\n\\n(desliza hacia abajo o ve al menu de opciones)</string>
+    <string name="refreshTitle">Actualizar</string>
+    <string name="tituloDialogo">Eliminar todas las citas favoritas</string>
+    <string name="mensajeDialogo">¿Desea eliminar todas las citas?</string>
+    <string name="botonDialogoPositivo">Aceptar</string>
+    <string name="botonDialogoNegativo">Cancelar</string>
+    <string name="tituloItemMenuFavourite">Eliminar todas las citas</string>
+</resources>
