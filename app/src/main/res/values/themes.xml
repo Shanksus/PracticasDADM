@@ -26,4 +26,7 @@
             @style/ThemeOverlay.App.FloatingActionButton
         </item>
     </style>
+    <style name="ThemeOverlay.App.prueba" parent="">
+        <item name="colorPrimaryVariant">?attr/colorPrimaryVariant</item>
+    </style>
 </resources>
