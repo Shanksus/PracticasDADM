@@ -15,9 +15,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import upv.dadm.devalent.practicainterfaz.R
 import upv.dadm.devalent.practicainterfaz.databinding.FragmentFavouritesBinding
 
+@AndroidEntryPoint
 class FavouritesFragment : Fragment(R.layout.fragment_favourites), MenuProvider {
     private var _binding: FragmentFavouritesBinding? = null
     private val binding get() = _binding!!
@@ -104,7 +106,7 @@ class FavouritesFragment : Fragment(R.layout.fragment_favourites), MenuProvider 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
             R.id.item_Delete -> {
-                //DeleteAllDialogFragment(this).show(childFragmentManager, null)
+                DeleteAllDialogFragment().show(childFragmentManager, null)
                 true
             }
             else -> {

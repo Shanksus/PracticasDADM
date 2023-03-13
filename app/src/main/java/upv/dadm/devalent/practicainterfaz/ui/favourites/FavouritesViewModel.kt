@@ -2,16 +2,19 @@ package upv.dadm.devalent.practicainterfaz.ui.favourites
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.map
+import dagger.hilt.android.lifecycle.HiltViewModel
 import upv.dadm.devalent.practicainterfaz.domain.model.Quotation
+import javax.inject.Inject
 
-class FavouritesViewModel : ViewModel() {
+@HiltViewModel
+class FavouritesViewModel @Inject constructor() : ViewModel() {
 
     private val _listaFavs = MutableLiveData<List<Quotation>>(getFavouritesQuotation())
     val listaFavs: LiveData<List<Quotation>> = _listaFavs
 
-    val isDeleteAllVisible = Transformations.map(listaFavs) { it.isNotEmpty() }
+    val isDeleteAllVisible = listaFavs.map { it.isNotEmpty() }
     private fun getFavouritesQuotation(): List<Quotation> {
         val aux = mutableListOf<Quotation>()
         for (i in 0..19) {

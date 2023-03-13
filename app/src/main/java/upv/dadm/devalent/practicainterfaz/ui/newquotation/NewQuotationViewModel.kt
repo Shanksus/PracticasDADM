@@ -1,9 +1,12 @@
 package upv.dadm.devalent.practicainterfaz.ui.newquotation
 
 import androidx.lifecycle.*
+import dagger.hilt.android.lifecycle.HiltViewModel
 import upv.dadm.devalent.practicainterfaz.domain.model.Quotation
+import javax.inject.Inject
 
-class NewQuotationViewModel : ViewModel() {
+@HiltViewModel
+class NewQuotationViewModel @Inject constructor() : ViewModel() {
 
     private val _userName = MutableLiveData<String>(getUserName())
     private fun getUserName() = setOf("Alice", "Bob", "Charlie", "David", "Emma").random()
