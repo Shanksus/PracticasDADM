@@ -1,9 +1,6 @@
 package upv.dadm.devalent.practicainterfaz.ui.newquotation
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import upv.dadm.devalent.practicainterfaz.domain.model.Quotation
 
 class NewQuotationViewModel : ViewModel() {
@@ -17,7 +14,7 @@ class NewQuotationViewModel : ViewModel() {
 
     private val _isRefreshing = MutableLiveData<Boolean>()
     val isRefreshing: LiveData<Boolean> = _isRefreshing
-    val isGreetingsVisible = Transformations.map(cita) { it == null }
+    val isGreetingsVisible = cita.map { it == null }
 
     private val _showingButton = MutableLiveData<Boolean>()
     val showingButton: LiveData<Boolean> = _showingButton
