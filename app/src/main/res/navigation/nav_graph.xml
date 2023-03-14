@@ -19,5 +19,13 @@
     <fragment
         android:id="@+id/favouritesFragment"
         android:name="upv.dadm.devalent.practicainterfaz.ui.favourites.FavouritesFragment"
-        android:label="@string/Favourite" />
+        android:label="@string/Favourite" >
+        <action
+            android:id="@+id/action_favouritesFragment_to_deleteAllDialogFragment"
+            app:destination="@id/deleteAllDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/deleteAllDialogFragment"
+        android:name="upv.dadm.devalent.practicainterfaz.ui.favourites.DeleteAllDialogFragment"
+        android:label="DeleteAllDialogFragment" />
 </navigation>

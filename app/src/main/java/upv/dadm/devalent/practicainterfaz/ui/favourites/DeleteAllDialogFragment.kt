@@ -17,7 +17,7 @@ class DeleteAllDialogFragment : DialogFragment() {
         mensajeDialogo.setTitle(R.string.tituloDialogo)
         mensajeDialogo.setMessage(R.string.mensajeDialogo)
         mensajeDialogo.setPositiveButton(R.string.botonDialogoPositivo) { _, _ ->
-            //viewModel.
+            viewModel.deleteAllQuotations()
         }
         mensajeDialogo.setNegativeButton(R.string.botonDialogoNegativo) { _, _ ->
             dismiss()

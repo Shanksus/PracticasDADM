@@ -17,7 +17,7 @@ class NewQuotationViewModel @Inject constructor() : ViewModel() {
 
     private val _isRefreshing = MutableLiveData<Boolean>()
     val isRefreshing: LiveData<Boolean> = _isRefreshing
-    val isGreetingsVisible = cita.map { it == null }
+    val isGreetingsVisible = cita.map { cita -> cita.id.isEmpty() }
 
     private val _showingButton = MutableLiveData<Boolean>()
     val showingButton: LiveData<Boolean> = _showingButton
