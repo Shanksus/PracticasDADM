@@ -17,4 +17,5 @@
     <string name="botonDialogoPositivo">Aceptar</string>
     <string name="botonDialogoNegativo">Cancelar</string>
     <string name="tituloItemMenuFavourite">Eliminar todas las citas</string>
+    <string name="quotationException">La cita no pudo ser creada</string>
 </resources>

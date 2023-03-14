@@ -9,6 +9,7 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import upv.dadm.devalent.practicainterfaz.R
 import upv.dadm.devalent.practicainterfaz.databinding.FragmentNewQuotationBinding
@@ -52,6 +53,17 @@ class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation), MenuProv
 
         binding.fbAnyadirFav.setOnClickListener{
             viewModel.addToFavourites()
+        }
+
+        viewModel.repositoryError.observe(viewLifecycleOwner) {
+            if(it != null) {
+                Snackbar.make(
+                    binding.root,
+                    R.string.quotationException,
+                    Snackbar.LENGTH_SHORT
+                ).show()
+                viewModel.resetError()
+            }
         }
     }
 

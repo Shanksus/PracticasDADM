@@ -16,4 +16,5 @@
     <string name="botonDialogoPositivo">Accept</string>
     <string name="botonDialogoNegativo">Cancel</string>
     <string name="tituloItemMenuFavourite">Delete all quotations</string>
+    <string name="quotationException">Quotation couldn\'t be created</string>
 </resources>
