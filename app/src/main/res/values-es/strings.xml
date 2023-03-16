@@ -10,7 +10,7 @@
     <string name="descripcion">Descripción de la foto</string>
     <string name="descripcionfloatbutton">Botón flotante para añadir una nueva cita</string>
     <string name="tituloAbout">Acerca de</string>
-    <string name="msgBienvenida">Hola %1s!,\\n\\nActualiza para recibir una nueva cita\\n\\n(desliza hacia abajo o ve al menu de opciones)</string>
+    <string name="msgBienvenida">Hola %1s!,\n\nActualiza para recibir una nueva cita\n\n(desliza hacia abajo o ve al menu de opciones)</string>
     <string name="refreshTitle">Actualizar</string>
     <string name="tituloDialogo">Eliminar todas las citas favoritas</string>
     <string name="mensajeDialogo">¿Desea eliminar todas las citas?</string>

@@ -13,6 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import upv.dadm.devalent.practicainterfaz.R
 import upv.dadm.devalent.practicainterfaz.databinding.FragmentNewQuotationBinding
+import upv.dadm.devalent.practicainterfaz.utils.NoInternetException
 
 @AndroidEntryPoint
 class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation), MenuProvider {
@@ -51,19 +52,31 @@ class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation), MenuProv
             binding.fbAnyadirFav.visibility = if (it) View.VISIBLE else View.INVISIBLE
         }
 
-        binding.fbAnyadirFav.setOnClickListener{
+        binding.fbAnyadirFav.setOnClickListener {
             viewModel.addToFavourites()
         }
 
-        viewModel.repositoryError.observe(viewLifecycleOwner) {
-            if(it != null) {
-                Snackbar.make(
-                    binding.root,
-                    R.string.quotationException,
-                    Snackbar.LENGTH_SHORT
-                ).show()
+        viewModel.repositoryError.observe(viewLifecycleOwner) { error ->
+            if (error != null) {
+                when (error) {
+                    is NoInternetException -> {
+                        Snackbar.make(
+                            binding.root,
+                            R.string.internetException,
+                            Snackbar.LENGTH_SHORT
+                        ).show()
+                    }
+                    else -> {
+                        Snackbar.make(
+                            binding.root,
+                            R.string.quotationException,
+                            Snackbar.LENGTH_SHORT
+                        ).show()
+                    }
+                }
                 viewModel.resetError()
             }
+
         }
     }
 
