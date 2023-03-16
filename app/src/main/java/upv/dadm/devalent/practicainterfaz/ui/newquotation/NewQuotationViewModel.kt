@@ -34,8 +34,6 @@ class NewQuotationViewModel @Inject constructor(var newQuotationRepository: NewQ
 
     fun getNewQuotation() {
         _isRefreshing.value = true
-        //val num = (0..99).random().toString()
-        //_cita.value = Quotation(num, "Quotation text #$num", "Author #$num")
 
         viewModelScope.launch {
             newQuotationRepository.getNewQuotation().fold(onSuccess = {
