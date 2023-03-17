@@ -13,10 +13,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NewQuotationProviderModule {
-    @ApplicationContext
     @Provides
     @Singleton
-    fun provideConnectivityManager (context: Context): ConnectivityManager {
+    fun provideConnectivityManager (@ApplicationContext context: Context): ConnectivityManager {
         return context.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
     }
 }
