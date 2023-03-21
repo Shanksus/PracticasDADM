@@ -1,7 +1,8 @@
 package upv.dadm.devalent.practicainterfaz.data.newquotation
 
-import upv.dadm.devalent.practicainterfaz.domain.model.Quotation
+import okhttp3.Response
+import upv.dadm.devalent.practicainterfaz.data.newquotation.model.QuotationDto
 
 interface NewQuotationDataSource {
-    suspend fun getQuotation(): Result<Quotation>
+    suspend fun getQuotation(): Response<QuotationDto>
 }
