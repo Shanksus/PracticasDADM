@@ -8,10 +8,10 @@ class NewQuotationRepositoryImpl @Inject constructor(
     var newQuotationDataSource: NewQuotationDataSource,
     var connectivityChecker: ConnectivityChecker
 ) : NewQuotationRepository {
-    override suspend fun getNewQuotation(): Result<Quotation> {
+    override suspend fun getNewQuotation(): Result<Quotation> =
         if  (connectivityChecker.isConnectionAvailable()) {
-            return newQuotationDataSource.getQuotation()
+            newQuotationDataSource.getQuotation()
         }
-        else throw NoInternetException()
-    }
+        else Result.failure(NoInternetException())
+
 }
