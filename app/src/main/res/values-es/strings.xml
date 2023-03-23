@@ -17,5 +17,7 @@
     <string name="botonDialogoPositivo">Aceptar</string>
     <string name="botonDialogoNegativo">Cancelar</string>
     <string name="tituloItemMenuFavourite">Eliminar todas las citas</string>
-    <string name="quotationException">La cita no pudo ser creada</string>
+    <string name="quotationException">La cita no pudo ser creada.</string>
+    <string name="internetException">No hay conexión a Internet.</string>
+    <string name="languageException">El idioma de la cita es desconocido.</string>
 </resources>
