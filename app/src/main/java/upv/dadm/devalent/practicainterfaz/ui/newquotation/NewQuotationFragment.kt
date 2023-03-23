@@ -14,6 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import upv.dadm.devalent.practicainterfaz.R
 import upv.dadm.devalent.practicainterfaz.databinding.FragmentNewQuotationBinding
 import upv.dadm.devalent.practicainterfaz.utils.NoInternetException
+import upv.dadm.devalent.practicainterfaz.utils.UnknownLanguageException
 
 @AndroidEntryPoint
 class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation), MenuProvider {
@@ -63,6 +64,13 @@ class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation), MenuProv
                         Snackbar.make(
                             binding.root,
                             R.string.internetException,
+                            Snackbar.LENGTH_SHORT
+                        ).show()
+                    }
+                    is UnknownLanguageException -> {
+                        Snackbar.make(
+                            binding.root,
+                            R.string.languageException,
                             Snackbar.LENGTH_SHORT
                         ).show()
                     }

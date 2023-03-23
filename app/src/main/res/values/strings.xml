@@ -18,4 +18,5 @@
     <string name="tituloItemMenuFavourite">Delete all quotations</string>
     <string name="quotationException">Quotation couldn\'t be created</string>
     <string name="internetException">There is no Internet connection</string>
+    <string name="languageException">The language is not known</string>
 </resources>
