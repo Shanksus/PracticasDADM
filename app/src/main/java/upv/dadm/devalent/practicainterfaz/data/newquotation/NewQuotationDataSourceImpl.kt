@@ -11,7 +11,7 @@ import javax.inject.Inject
 class NewQuotationDataSourceImpl @Inject constructor(retrofit: Retrofit) : NewQuotationDataSource {
     interface NewQuotationRetrofit {
         @GET("api/1.0/?method=getQuote&format=json&lang=en")
-        fun getQuotation(): Response<QuotationDto>
+        suspend fun getQuotation(): Response<QuotationDto>
     }
 
     private val retrofitQuotationService = retrofit.create(NewQuotationRetrofit::class.java)

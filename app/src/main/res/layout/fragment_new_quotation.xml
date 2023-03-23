@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:justificationMode="inter_word"
                 android:text=""
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:textColor="@color/orange_dark"
                 app:layout_constraintBottom_toTopOf="@+id/msgAutor"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,8 @@
                 android:layout_marginEnd="20dp"
                 android:justificationMode="inter_word"
                 android:textStyle="italic"
-                android:textColor="@color/red"
+                android:textSize="18sp"
+                android:textColor="@color/dark_purple"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/msgCita" />
