@@ -60,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:contentDescription="@string/descripcionfloatbutton"
+            android:visibility="invisible"
             android:src="@drawable/baseline_favorite_border_24" />
     </FrameLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

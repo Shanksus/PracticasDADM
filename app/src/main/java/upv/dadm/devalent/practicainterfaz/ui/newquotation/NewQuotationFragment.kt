@@ -49,7 +49,7 @@ class NewQuotationFragment : Fragment(R.layout.fragment_new_quotation), MenuProv
 
         requireActivity().addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
-        viewModel.showingButton.observe(viewLifecycleOwner) {
+        viewModel.isAddToFavouritesVisible.observe(viewLifecycleOwner) {
             binding.fbAnyadirFav.visibility = if (it) View.VISIBLE else View.INVISIBLE
         }
 
