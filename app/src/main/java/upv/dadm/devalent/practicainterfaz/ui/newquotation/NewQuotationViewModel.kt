@@ -3,6 +3,7 @@ package upv.dadm.devalent.practicainterfaz.ui.newquotation
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import upv.dadm.devalent.practicainterfaz.data.favourites.FavouritesRepository
 import upv.dadm.devalent.practicainterfaz.data.newquotation.NewQuotationManager
 import upv.dadm.devalent.practicainterfaz.data.newquotation.NewQuotationRepository
 import upv.dadm.devalent.practicainterfaz.data.settings.SettingsRepository
@@ -12,7 +13,8 @@ import javax.inject.Inject
 @HiltViewModel
 class NewQuotationViewModel @Inject constructor(
     var settingsRepository: SettingsRepository,
-    var newQuotationManager: NewQuotationManager
+    var newQuotationManager: NewQuotationManager,
+    var favouritesRepository: FavouritesRepository
 ) :
     ViewModel() {
 
@@ -52,6 +54,13 @@ class NewQuotationViewModel @Inject constructor(
     }
 
     fun addToFavourites() {
-        _showingButton.value = false
+        viewModelScope.launch {
+            try {
+                favouritesRepository.insertQuotation(cita.value!!)
+                _showingButton.value = false
+            } catch (e: Exception) {
+                _repositoryError.value = e
+            }
+        }
     }
 }
