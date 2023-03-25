@@ -3,6 +3,7 @@ package upv.dadm.devalent.practicainterfaz.ui.newquotation
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import upv.dadm.devalent.practicainterfaz.data.newquotation.NewQuotationManager
 import upv.dadm.devalent.practicainterfaz.data.newquotation.NewQuotationRepository
 import upv.dadm.devalent.practicainterfaz.data.settings.SettingsRepository
 import upv.dadm.devalent.practicainterfaz.domain.model.Quotation
@@ -10,8 +11,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewQuotationViewModel @Inject constructor(
-    var newQuotationRepository: NewQuotationRepository,
-    var settingsRepository: SettingsRepository
+    var settingsRepository: SettingsRepository,
+    var newQuotationManager: NewQuotationManager
 ) :
     ViewModel() {
 
@@ -38,7 +39,7 @@ class NewQuotationViewModel @Inject constructor(
         _isRefreshing.value = true
 
         viewModelScope.launch {
-            newQuotationRepository.getNewQuotation().fold(onSuccess = {
+            newQuotationManager.getNewQuotation().fold(onSuccess = {
                 _cita.value = it
             }, onFailure = { _repositoryError.value = it })
         }

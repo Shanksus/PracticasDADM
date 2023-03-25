@@ -5,4 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface SettingsDataSource {
     fun getUserName() : Flow<String>
+
+    fun getLanguage() : Flow<String>
 }
