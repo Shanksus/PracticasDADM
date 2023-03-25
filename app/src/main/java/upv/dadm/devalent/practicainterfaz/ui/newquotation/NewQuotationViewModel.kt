@@ -4,16 +4,18 @@ import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import upv.dadm.devalent.practicainterfaz.data.newquotation.NewQuotationRepository
+import upv.dadm.devalent.practicainterfaz.data.settings.SettingsRepository
 import upv.dadm.devalent.practicainterfaz.domain.model.Quotation
 import javax.inject.Inject
 
 @HiltViewModel
-class NewQuotationViewModel @Inject constructor(var newQuotationRepository: NewQuotationRepository) :
+class NewQuotationViewModel @Inject constructor(
+    var newQuotationRepository: NewQuotationRepository,
+    var settingsRepository: SettingsRepository
+) :
     ViewModel() {
 
-    private val _userName = MutableLiveData<String>(getUserName())
-    private fun getUserName() = setOf("Alice", "Bob", "Charlie", "David", "Emma").random()
-    val userName: LiveData<String> = _userName
+    val userName: LiveData<String> = settingsRepository.getUsername().asLiveData()
 
     private val _cita = MutableLiveData<Quotation>()
     val cita: LiveData<Quotation> = _cita
@@ -38,7 +40,7 @@ class NewQuotationViewModel @Inject constructor(var newQuotationRepository: NewQ
         viewModelScope.launch {
             newQuotationRepository.getNewQuotation().fold(onSuccess = {
                 _cita.value = it
-            }, onFailure = { _repositoryError.value = it})
+            }, onFailure = { _repositoryError.value = it })
         }
         _isRefreshing.value = false
         _showingButton.value = true

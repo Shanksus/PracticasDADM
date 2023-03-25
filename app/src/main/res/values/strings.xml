@@ -6,8 +6,8 @@
     <string name="Settings">Settings</string>
     <string name="FavouriteItem">Favourites</string>
     <string name="newQuotationItem">Quotations</string>
-    <string name="descripcion">P</string>
-    <string name="descripcionfloatbutton">F para añadir una cita nueva</string>
+    <string name="descripcion">Photo description</string>
+    <string name="descripcionfloatbutton">Float button to add a new quote</string>
     <string name="tituloAbout">About</string>
     <string name="msgBienvenida">“Hello %1s!,\n\nRefresh to get a new quotation\n\n(swipe down or options menu)</string>
     <string name="refreshTitle">Refresh</string>
@@ -19,4 +19,11 @@
     <string name="quotationException">Quotation couldn\'t be created.</string>
     <string name="internetException">There is no Internet connection.</string>
     <string name="languageException">The language is not known.</string>
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
+    <string name="en" translatable="false">en</string>
+    <string name="ru" translatable="false">ru</string>
+    <string name="username">User name</string>
+    <string name="language">Language</string>
+    <string name="hintUserName">Enter your user name</string>
 </resources>
