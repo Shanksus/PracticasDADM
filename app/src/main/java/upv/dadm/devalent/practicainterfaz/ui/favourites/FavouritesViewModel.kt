@@ -2,12 +2,13 @@ package upv.dadm.devalent.practicainterfaz.ui.favourites
 
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import upv.dadm.devalent.practicainterfaz.data.favourites.FavouritesRepository
 import upv.dadm.devalent.practicainterfaz.domain.model.Quotation
 import javax.inject.Inject
 
 @HiltViewModel
-class FavouritesViewModel @Inject constructor(favouritesRepository: FavouritesRepository) : ViewModel() {
+class FavouritesViewModel @Inject constructor(private val favouritesRepository: FavouritesRepository) : ViewModel() {
 
     val listaFavs: LiveData<List<Quotation>> = favouritesRepository.getAllQuotations().asLiveData()
 
@@ -15,15 +16,15 @@ class FavouritesViewModel @Inject constructor(favouritesRepository: FavouritesRe
 
 
     fun deleteAllQuotations() {
-        //_listaFavs.value = emptyList()
+        viewModelScope.launch {
+            favouritesRepository.deleteAllQuotations()
+        }
     }
 
     fun deleteQuotationAtPosition(position: Int) {
-        /*
-        val listaNueva = _listaFavs.value?.toMutableList()
-        listaNueva?.removeAt(position)
-        _listaFavs.value = listaNueva!!
-         */
+        viewModelScope.launch {
+            listaFavs.value?.toMutableList()?.get(position)?.let { favouritesRepository.deleteQuotation(it) }
+        }
     }
 
 }
